@@ -12,6 +12,7 @@ final class LargeImageCell: BottomSeparatorCell {
 
   private let headlineLabel = UILabel().configure {
     $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.numberOfLines = 0
   }
 
   private let summaryLabel = UILabel().configure {
