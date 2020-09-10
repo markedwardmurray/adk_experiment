@@ -6,3 +6,6 @@ target 'Sample' do
   pod 'Texture', '~> 3.0'
   pod 'PINRemoteImage', :git => 'https://github.com/pinterest/PINRemoteImage', :branch => 'master'
 end
+
+target 'SampleUITests' do
+end

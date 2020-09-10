@@ -15,6 +15,7 @@
 		2A3038B61DC90F6900228931 /* FooterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3038B51DC90F6900228931 /* FooterNode.swift */; };
 		2A3038B81DC9119200228931 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A3038B71DC9119200228931 /* Media.xcassets */; };
 		2AA47F121DC8E60F00821444 /* ScrollCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA47F111DC8E60F00821444 /* ScrollCellNode.swift */; };
+		7924D330EA784333391496EE /* Pods_SampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62977D7058719F488885610 /* Pods_SampleUITests.framework */; };
 		9436AACB1DB81B6C0029B9B2 /* HeadlineSummaryCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9436AACA1DB81B6C0029B9B2 /* HeadlineSummaryCellNode.swift */; };
 		9436AACD1DB833A00029B9B2 /* ThumbnailCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9436AACC1DB833A00029B9B2 /* ThumbnailCellNode.swift */; };
 		9436AACF1DB835C40029B9B2 /* thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9436AACE1DB835C40029B9B2 /* thumbnail.jpg */; };
@@ -70,6 +71,7 @@
 		2A3038B51DC90F6900228931 /* FooterNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterNode.swift; sourceTree = "<group>"; };
 		2A3038B71DC9119200228931 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		2AA47F111DC8E60F00821444 /* ScrollCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollCellNode.swift; sourceTree = "<group>"; };
+		8D4043F07835629312C44E5D /* Pods-SampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleUITests/Pods-SampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9436AACA1DB81B6C0029B9B2 /* HeadlineSummaryCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadlineSummaryCellNode.swift; sourceTree = "<group>"; };
 		9436AACC1DB833A00029B9B2 /* ThumbnailCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailCellNode.swift; sourceTree = "<group>"; };
 		9436AACE1DB835C40029B9B2 /* thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbnail.jpg; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		9436AAD41DBA78170029B9B2 /* Crop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crop.swift; sourceTree = "<group>"; };
 		94752ABA1DC63B8C00B1B781 /* WebCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebCellNode.swift; sourceTree = "<group>"; };
 		9B402DAAE8C6A8B9BE1A506B /* Pods-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sample/Pods-Sample.debug.xcconfig"; sourceTree = "<group>"; };
+		A4841F0C37F1C7A006009A82 /* Pods-SampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleUITests/Pods-SampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CD55E8162509460E00F86A08 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD55E8182509465900F86A08 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CD8A69E5250AA67400A04E80 /* WebCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCell.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		D59BF7EE250001410058C51A /* SampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59BF7F0250001410058C51A /* ScrollPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPerformanceTests.swift; sourceTree = "<group>"; };
 		D59BF7F2250001410058C51A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D62977D7058719F488885610 /* Pods_SampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C4D39225093F1100A0B9A0 /* LargeImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7924D330EA784333391496EE /* Pods_SampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				27E6141C83F216FCA6D7EAEE /* Pods_Sample.framework */,
+				D62977D7058719F488885610 /* Pods_SampleUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,6 +189,8 @@
 			children = (
 				9B402DAAE8C6A8B9BE1A506B /* Pods-Sample.debug.xcconfig */,
 				08B9AAEC0A03243C3516AA96 /* Pods-Sample.release.xcconfig */,
+				8D4043F07835629312C44E5D /* Pods-SampleUITests.debug.xcconfig */,
+				A4841F0C37F1C7A006009A82 /* Pods-SampleUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -295,6 +303,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D59BF7F5250001410058C51A /* Build configuration list for PBXNativeTarget "SampleUITests" */;
 			buildPhases = (
+				16B9051FE413EE8D9625AC10 /* [CP] Check Pods Manifest.lock */,
 				D59BF7EA250001410058C51A /* Sources */,
 				D59BF7EB250001410058C51A /* Frameworks */,
 				D59BF7EC250001410058C51A /* Resources */,
@@ -390,6 +399,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		16B9051FE413EE8D9625AC10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SampleUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2361A4F6CAC4BB866C2B4A1C /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -675,6 +706,7 @@
 		};
 		D59BF7F6250001410058C51A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D4043F07835629312C44E5D /* Pods-SampleUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -709,6 +741,7 @@
 		};
 		D59BF7F7250001410058C51A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4841F0C37F1C7A006009A82 /* Pods-SampleUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
