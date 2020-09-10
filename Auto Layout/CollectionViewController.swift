@@ -132,19 +132,3 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
     }
   }
 }
-
-private enum Section: CaseIterable {
-  case carouselSection
-  case webCellSection
-  case largeImageCellSection
-  case thumbnailCellSection
-  case headlineSummarySection
-
-  var isCarouselSection: Bool {
-    return self == .carouselSection
-  }
-
-  init(_ sectionIndex: Int) {
-    self = Self.allCases[sectionIndex % Self.allCases.count]
-  }
-}

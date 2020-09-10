@@ -25,6 +25,7 @@
 		CD55E8192509465900F86A08 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD55E8182509465900F86A08 /* Launch Screen.storyboard */; };
 		CD8A69E6250AA67400A04E80 /* WebCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A69E5250AA67400A04E80 /* WebCell.swift */; };
 		CD8A69E8250AA8B000A04E80 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A69E7250AA8B000A04E80 /* Configurable.swift */; };
+		CDA802FA250AB27B003C27D3 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA802F9250AB27B003C27D3 /* Section.swift */; };
 		CDEF690425028637006082AB /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF690325028637006082AB /* ThumbnailCell.swift */; };
 		CDEF69062502867C006082AB /* HeadlineSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF69052502867C006082AB /* HeadlineSummaryCell.swift */; };
 		CDEF690825028694006082AB /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEF690725028694006082AB /* FooterView.swift */; };
@@ -81,6 +82,7 @@
 		CD55E8182509465900F86A08 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CD8A69E5250AA67400A04E80 /* WebCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCell.swift; sourceTree = "<group>"; };
 		CD8A69E7250AA8B000A04E80 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		CDA802F9250AB27B003C27D3 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		CDEF690325028637006082AB /* ThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCell.swift; sourceTree = "<group>"; };
 		CDEF69052502867C006082AB /* HeadlineSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineSummaryCell.swift; sourceTree = "<group>"; };
 		CDEF690725028694006082AB /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				050E7C7319D22E19004363C2 /* AppDelegate.swift */,
 				9436AAD41DBA78170029B9B2 /* Crop.swift */,
+				CDA802F9250AB27B003C27D3 /* Section.swift */,
 				2A3038B21DC8F7DD00228931 /* RRFPSBar.h */,
 				2A3038B31DC8F7DD00228931 /* RRFPSBar.m */,
 				CD55E8152509460E00F86A08 /* Supporting Files */,
@@ -442,6 +445,7 @@
 				D53BDE7D25015FB5001FB387 /* ContentGenerator.swift in Sources */,
 				9436AACB1DB81B6C0029B9B2 /* HeadlineSummaryCellNode.swift in Sources */,
 				CDEF690425028637006082AB /* ThumbnailCell.swift in Sources */,
+				CDA802FA250AB27B003C27D3 /* Section.swift in Sources */,
 				CDEF690A2502878F006082AB /* Reusable.swift in Sources */,
 				CD8A69E8250AA8B000A04E80 /* Configurable.swift in Sources */,
 				2AA47F121DC8E60F00821444 /* ScrollCellNode.swift in Sources */,

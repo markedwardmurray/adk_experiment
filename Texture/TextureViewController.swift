@@ -53,18 +53,18 @@ final class TextureViewController: ASDKViewController<ASDisplayNode>, ASTableDat
     let headline = ContentGenerator.words(min: 2,8)
     let summary = ContentGenerator.words(min: 20,40)
     let node: ASCellNode
-    let itemNumber = indexPath.row + 1
-    if itemNumber % 5 == 0 {
+    switch Section(indexPath.row) {
+    case .carouselSection:
       node = ScrollCellNode(numberOfItems: 10)
-    } else if itemNumber % 4 == 0 {
+    case .webCellSection:
       let url = NSURL(string: "https://secure-ds.serving-sys.com/BurstingRes/Site-85296/WSFolders/7649898/TH029_728x90_r3.hyperesources/TH029_728x90_GiGi.jpg")!
       node = WebCellNode(url: url, height: 50)
-    } else if itemNumber % 3 == 0 {
+    case .largeImageCellSection:
       let crop = Crop(imageFilename: "coltrane.jpg", size: CGSize(width: 540, height: 300))
       node = LargeImageCellNode(headline: headline, summary: summary, kicker: "KICKER", credit: "Photo by Joe Blow", crop: crop)
-    } else if itemNumber % 2 == 0 {
+    case .thumbnailCellSection:
       node = ThumbnailCellNode(headline: headline, summary: summary)
-    } else {
+    case .headlineSummarySection:
       node = HeadlineSummaryCellNode(headline: headline, summary: summary)
     }
 
