@@ -13,15 +13,19 @@ final class LargeImageCell: BottomSeparatorCell {
   private let headlineLabel = UILabel().configure {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.numberOfLines = 0
+    $0.setContentHuggingPriority(.required, for: .vertical)
   }
 
   private let summaryLabel = UILabel().configure {
     $0.numberOfLines = 0
     $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.setContentCompressionResistancePriority(.defaultHigh - 1, for: .vertical)
   }
 
   private let kickerLabel = UILabel().configure {
     $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.setContentHuggingPriority(.required, for: .vertical)
+    $0.setContentCompressionResistancePriority(.required, for: .vertical)
   }
 
   private let creditLabel = UILabel().configure {
