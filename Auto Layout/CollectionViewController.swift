@@ -90,8 +90,8 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let headline = ContentGenerator.words(min: 2,8)
-    let summary = ContentGenerator.words(min: 20,40)
+    let headline = ContentGenerator.thisManyWords(2...8)
+    let summary = ContentGenerator.thisManyWords(20...40)
 
     switch Section(indexPath.section) {
     case .carouselSection:

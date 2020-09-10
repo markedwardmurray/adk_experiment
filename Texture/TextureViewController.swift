@@ -50,8 +50,8 @@ final class TextureViewController: ASDKViewController<ASDisplayNode>, ASTableDat
   // MARK: ASTableView data source and delegate.
 
   func tableView(_ tableView: ASTableView, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
-    let headline = ContentGenerator.words(min: 2,8)
-    let summary = ContentGenerator.words(min: 20,40)
+    let headline = ContentGenerator.thisManyWords(2...8)
+    let summary = ContentGenerator.thisManyWords(20...40)
     let node: ASCellNode
     switch Section(indexPath.row) {
     case .carouselSection:

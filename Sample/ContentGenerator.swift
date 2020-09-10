@@ -10,7 +10,7 @@ import Foundation
 
 enum ContentGenerator {
 
-  static func words(min: Int, _ max: Int) -> String {
+  static func thisManyWords(_ countRange: ClosedRange<Int>) -> String {
     let wordList = [
       "alias", "consequatur", "aut", "sit", "voluptatem",
       "accusantium", "doloremque", "aperiam", "eaque", "ipsa", "quae", "ab",
@@ -51,7 +51,7 @@ enum ContentGenerator {
       "maiores", "doloribus", "asperiores", "repellat"
     ]
 
-    let count: Int = Int(arc4random_uniform(UInt32(max - min))) + min;
+    let count = Int.random(in: countRange)
 
     var result = "START "
     (0..<count).forEach { idx in
@@ -61,4 +61,5 @@ enum ContentGenerator {
 
     return result
   }
+
 }
