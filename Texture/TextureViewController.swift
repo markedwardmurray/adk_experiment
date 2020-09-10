@@ -61,7 +61,14 @@ final class TextureViewController: ASDKViewController<ASDisplayNode>, ASTableDat
       node = WebCellNode(url: url, height: 50)
     case .largeImageCellSection:
       let crop = Crop(imageFilename: "coltrane.jpg", size: CGSize(width: 540, height: 300))
-      node = LargeImageCellNode(headline: headline, summary: summary, kicker: "KICKER", credit: "Photo by Joe Blow", crop: crop)
+      node = LargeImageCellNode(
+        headline: headline,
+          summary: summary,
+          kicker: "KICKER",
+          credit: "Photo by Joe Blow",
+          hideFooter: false,
+          crop: crop
+      )
     case .thumbnailCellSection:
       node = ThumbnailCellNode(headline: headline, summary: summary)
     case .headlineSummarySection:

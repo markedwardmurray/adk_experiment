@@ -18,8 +18,12 @@ final class LargeImageCellNode: ASCellNode {
   var footerNode = FooterNode()
   var aspectRatio: CGFloat = 0.0
 
-  convenience init(headline: String, summary: String, kicker: String, credit: String, crop: Crop) {
+  private var hideFooter: Bool = false
+
+  convenience init(headline: String, summary: String, kicker: String, credit: String, hideFooter: Bool, crop: Crop) {
     self.init()
+
+    self.hideFooter = hideFooter
 
     aspectRatio = crop.size.height / crop.size.width
     imageNode.image = UIImage(named: crop.imageFilename)
@@ -62,7 +66,10 @@ final class LargeImageCellNode: ASCellNode {
     addSubnode(kickerNode)
     addSubnode(headlineNode)
     addSubnode(summaryNode)
-    addSubnode(footerNode)
+
+    if !hideFooter {
+      addSubnode(footerNode)
+    }
   }
   
   override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
@@ -85,7 +92,13 @@ final class LargeImageCellNode: ASCellNode {
     kickerHeadlineStackSpec.spacing = 2.0
 
     let verticalStackSpec = ASStackLayoutSpec.vertical()
-    verticalStackSpec.children = [ imageStackSpec, kickerHeadlineStackSpec, summaryNode, footerNode ]
+    var children: [ASLayoutElement] = [ imageStackSpec, kickerHeadlineStackSpec, summaryNode ]
+
+    if !hideFooter {
+      children.append(footerNode)
+    }
+
+    verticalStackSpec.children = children
     verticalStackSpec.spacing = 10.0
     
     let insets = UIEdgeInsets(all: 10)

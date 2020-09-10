@@ -29,12 +29,10 @@ final class LargeImageCell: BottomSeparatorCell {
   }
 
   private let creditLabel = UILabel().configure {
-    $0.translatesAutoresizingMaskIntoConstraints = false
+    _ = $0
   }
 
-  private let footerLabel = UILabel().configure {
-    $0.translatesAutoresizingMaskIntoConstraints = false
-  }
+  private let footerView = FooterView()
 
   private let imageView: UIImageView = {
     let imageView = UIImageView()
@@ -58,7 +56,7 @@ final class LargeImageCell: BottomSeparatorCell {
         headlineLabel
       ]),
       summaryLabel,
-      footerLabel
+      footerView,
     ])
     contentView.addSubview(mainStack)
     mainStack.pinEdgesToSuperView(lowerBottomAndTrailingPriorities: true)
@@ -66,7 +64,7 @@ final class LargeImageCell: BottomSeparatorCell {
     mainStack.layoutMargins = UIEdgeInsets(all: 10)
   }
 
-  func set(headline: String, summary: String, kicker: String, credit: String, crop: Crop) {
+  func set(headline: String, summary: String, kicker: String, credit: String, hideFooter: Bool, crop: Crop) {
     headlineLabel.attributedText = NSAttributedString(
       string: headline,
       attributes: [
@@ -103,5 +101,7 @@ final class LargeImageCell: BottomSeparatorCell {
         .foregroundColor: UIColor.black
       ])
     kickerLabel.isHidden = kicker.isEmpty
+
+    footerView.isHidden = hideFooter
   }
 }

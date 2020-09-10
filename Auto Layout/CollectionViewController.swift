@@ -101,6 +101,7 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
         summary: "Miles Dewey Davis III was an American jazz trumpeter, bandleader, and composer.",
         kicker: "",
         credit: "",
+        hideFooter: true,
         crop: Crop(imageFilename: "miles.png", size: CGSize(width: 560, height: 560))
       )
       return cell
@@ -119,6 +120,7 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
         summary: summary,
         kicker: "KICKER",
         credit: "Photo by Joe Blow",
+        hideFooter: false,
         crop: Crop(imageFilename: "coltrane.jpg", size: CGSize(width: 540, height: 300))
       )
       return cell
