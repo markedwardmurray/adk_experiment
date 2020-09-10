@@ -29,7 +29,8 @@ final class LargeImageCell: BottomSeparatorCell {
   }
 
   private let creditLabel = UILabel().configure {
-    _ = $0
+    $0.setContentHuggingPriority(.required, for: .vertical)
+    $0.setContentCompressionResistancePriority(.required, for: .vertical)
   }
 
   private let footerView = FooterView()
