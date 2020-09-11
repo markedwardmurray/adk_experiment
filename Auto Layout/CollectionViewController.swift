@@ -34,10 +34,11 @@ final class CollectionViewController: UICollectionViewController, UICollectionVi
     collectionView.register(cell: HeadlineSummaryCell.self)
     collectionView.register(cell: ThumbnailCell.self)
     collectionView.register(cell: LargeImageCell.self)
+    collectionView.register(cell: WebCell.self)
   }
 
   private static let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
-    sectionIndex.isCarouselSection ? carouselLayoutSection : defaultLayoutSection
+    Section(sectionIndex).isCarouselSection ? carouselLayoutSection : defaultLayoutSection
   }
 
   private static let carouselLayoutSection: NSCollectionLayoutSection = {
@@ -85,39 +86,51 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
   }
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return section.isCarouselSection ? 10 : 1
+    return Section(section).isCarouselSection ? 10 : 1
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let headline = ContentGenerator.words(min: 2,8)
-    let summary = ContentGenerator.words(min: 20,40)
+    let headline = ContentGenerator.thisManyWords(2...8)
+    let summary = ContentGenerator.thisManyWords(20...40)
 
-    if indexPath.section.isCarouselSection {
+    switch Section(indexPath.section) {
+    case .carouselSection:
       let cell: LargeImageCell = collectionView.dequeue(for: indexPath)
       cell.set(
         headline: "Miles Davis",
         summary: "Miles Dewey Davis III was an American jazz trumpeter, bandleader, and composer.",
-        image: "miles.png"
+        kicker: "",
+        credit: "",
+        hideFooter: true,
+        crop: Crop(imageFilename: "miles.png", size: CGSize(width: 560, height: 560))
       )
       return cell
-    } else if indexPath.section.isHeadlineSummarySection {
+    case .headlineSummarySection:
       let cell: HeadlineSummaryCell = collectionView.dequeue(for: indexPath)
       cell.set(headline: headline, summary: summary)
       return cell
-    } else {
+    case .thumbnailCellSection:
       let cell: ThumbnailCell = collectionView.dequeue(for: indexPath)
       cell.set(headline: headline, summary: summary)
       return cell
+    case .largeImageCellSection:
+      let cell: LargeImageCell = collectionView.dequeue(for: indexPath)
+      cell.set(
+        headline: headline,
+        summary: summary,
+        kicker: "KICKER",
+        credit: "Photo by Joe Blow",
+        hideFooter: false,
+        crop: Crop(imageFilename: "coltrane.jpg", size: CGSize(width: 540, height: 300))
+      )
+      return cell
+    case .webCellSection:
+      let cell: WebCell = collectionView.dequeue(for: indexPath)
+      cell.set(
+        url: URL(string: "https://secure-ds.serving-sys.com/BurstingRes/Site-85296/WSFolders/7649898/TH029_728x90_r3.hyperesources/TH029_728x90_GiGi.jpg")!,
+        height: 50
+      )
+      return cell
     }
-  }
-}
-
-private extension Int {
-  var isCarouselSection: Bool {
-    return (self + 1) % 5 == 0
-  }
-
-  var isHeadlineSummarySection: Bool {
-    return (self + 1) % 4 == 0
   }
 }

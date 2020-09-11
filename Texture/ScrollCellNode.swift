@@ -37,7 +37,7 @@ final class ScrollCellNode: ASCellNode, ASCollectionDelegate, ASCollectionDataSo
     let collectionNodeSize = CGSize(width: constrainedSize.max.width, height: elementSize.height)
     collectionNode.style.preferredSize = collectionNodeSize
 
-    let insets = UIEdgeInsets(top: nodeMargin, left: nodeMargin, bottom: nodeMargin, right: nodeMargin)
+    let insets = UIEdgeInsets(all: nodeMargin)
     return ASInsetLayoutSpec(insets: insets, child: collectionNode)
 
   }
@@ -50,7 +50,14 @@ final class ScrollCellNode: ASCellNode, ASCollectionDelegate, ASCollectionDataSo
     let elementSize = self.elementSize
     return { () -> ASCellNode in
       let crop = Crop(imageFilename: "miles.png", size: CGSize(width: 560, height: 560))
-      let elementNode = LargeImageCellNode(headline: "Miles Davis", summary: "Miles Dewey Davis III was an American jazz trumpeter, bandleader, and composer.", kicker: "", credit: "", crop: crop)
+      let elementNode = LargeImageCellNode(
+          headline: "Miles Davis",
+          summary: "Miles Dewey Davis III was an American jazz trumpeter, bandleader, and composer.",
+          kicker: "",
+          credit: "",
+          hideFooter: true,
+          crop: crop
+      )
       elementNode.style.preferredSize = elementSize
       return elementNode
     }

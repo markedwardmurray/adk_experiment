@@ -20,15 +20,15 @@ final class HeadlineSummaryCellNode: ASCellNode {
     headlineNode.attributedText = NSAttributedString(
       string: headline,
       attributes: [
-        NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18),
-        NSAttributedString.Key.foregroundColor: UIColor.black
+        .font: UIFont.boldSystemFont(ofSize: 18),
+        .foregroundColor: UIColor.black
       ])
 
     summaryNode.attributedText = NSAttributedString(
       string: summary,
       attributes: [
-        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
-        NSAttributedString.Key.foregroundColor: UIColor.darkGray
+        .font: UIFont.systemFont(ofSize: 14),
+        .foregroundColor: UIColor.darkGray
       ])
 
     addSubnode(headlineNode)
@@ -45,7 +45,7 @@ final class HeadlineSummaryCellNode: ASCellNode {
     verticalStackSpec.children = [ headlineSummaryStackSpec, footerNode ]
     verticalStackSpec.spacing = 10.0
 
-    let insets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    let insets = UIEdgeInsets(all: 10)
     let insetSpec = ASInsetLayoutSpec(insets: insets, child: verticalStackSpec)
     
     return insetSpec

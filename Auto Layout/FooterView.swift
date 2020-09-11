@@ -10,7 +10,7 @@ import UIKit
 
 final class FooterView: UIView {
 
-  private lazy var dateView: UILabel = {
+  private let dateView: UILabel = {
     let formatter = DateFormatter()
     formatter.dateFormat = "MMM d"
     let displayDate = formatter.string(from: Date())
@@ -18,25 +18,21 @@ final class FooterView: UIView {
     label.attributedText = NSAttributedString(
       string: displayDate,
       attributes: [
-        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
-        NSAttributedString.Key.foregroundColor: UIColor.gray
+        .font: UIFont.systemFont(ofSize: 12),
+        .foregroundColor: UIColor.gray
       ])
     return label
   }()
 
-  private lazy var shareButton: UIButton = {
-    let button = UIButton()
-    button.setBackgroundImage(UIImage(named: "NYTShareIcon"), for: .normal)
-    button.setContentHuggingPriority(.required, for: .horizontal)
-    return button
-  }()
+  private let shareButton = UIButton().configure {
+    $0.setBackgroundImage(UIImage(named: "NYTShareIcon"), for: .normal)
+    $0.setContentHuggingPriority(.required, for: .horizontal)
+  }
 
-  private lazy var saveButton: UIButton = {
-    let button = UIButton()
-    button.setBackgroundImage(UIImage(named: "NYTSaveIcon"), for: .normal)
-    button.setContentHuggingPriority(.required, for: .horizontal)
-    return button
-  }()
+  private let saveButton = UIButton().configure {
+    $0.setBackgroundImage(UIImage(named: "NYTSaveIcon"), for: .normal)
+    $0.setContentHuggingPriority(.required, for: .horizontal)
+  }
 
   override init(frame: CGRect) {
     super.init(frame: frame)

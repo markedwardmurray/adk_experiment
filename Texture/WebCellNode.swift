@@ -28,9 +28,9 @@ final class WebCellNode: ASCellNode {
     disclaimerNode.attributedText = NSAttributedString(
       string: "ADVERTISEMENT",
       attributes: [
-        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 9.0),
-        NSAttributedString.Key.paragraphStyle: paragraphStyle,
-        NSAttributedString.Key.foregroundColor: UIColor.lightGray
+        .font: UIFont.systemFont(ofSize: 9.0),
+        .paragraphStyle: paragraphStyle,
+        .foregroundColor: UIColor.lightGray
       ])
     
     addSubnode(disclaimerNode)
@@ -62,7 +62,7 @@ final class WebCellNode: ASCellNode {
     verticalStackSpec.children = [ disclaimerNode, webNode ]
     verticalStackSpec.spacing = 10.0
     
-    let insets = UIEdgeInsets(top: nodeMargin, left: nodeMargin, bottom: nodeMargin, right: nodeMargin)
+    let insets = UIEdgeInsets(all: nodeMargin)
     return ASInsetLayoutSpec(insets: insets, child: verticalStackSpec)
   }
 }
