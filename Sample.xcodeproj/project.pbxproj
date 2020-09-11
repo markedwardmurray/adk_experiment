@@ -192,7 +192,6 @@
 				D5AF9CF752212F650D1F6F93 /* Pods-SampleUITests.debug.xcconfig */,
 				6D0A048CF318E8413887A765 /* Pods-SampleUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -601,7 +600,7 @@
 				DEVELOPMENT_TEAM = FL458598BU;
 				INFOPLIST_FILE = "Sample/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.AsyncDisplayKit.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nytimes.Texture.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sample/Sample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -618,7 +617,7 @@
 				DEVELOPMENT_TEAM = FL458598BU;
 				INFOPLIST_FILE = "Sample/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.AsyncDisplayKit.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nytimes.Texture.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sample/Sample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
