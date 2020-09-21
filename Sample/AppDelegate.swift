@@ -35,8 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   private let tabBarController: UITabBarController = {
-    let textureVc = TextureViewController(cellCount: 1000)
-    let collectionVc = CollectionViewController(cellCount: 1000)
+    let cellCount = 1000
+    let textureVc = TextureViewController(cellCount: cellCount)
+    let collectionVc = CollectionViewController(cellCount: cellCount)
 
     textureVc.title = "Texture"
     collectionVc.title = "Auto Layout"
