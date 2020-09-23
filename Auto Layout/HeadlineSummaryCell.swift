@@ -36,7 +36,7 @@ final class HeadlineSummaryCell: BottomSeparatorCell {
 
     contentView.addSubview(stackView)
 
-    stackView.pinEdges(to: contentView)
+    stackView.pinEdges(to: contentView, lowerBottomAndTrailingPriorities: true)
   }
 
   func set(headline: String, summary: String) {

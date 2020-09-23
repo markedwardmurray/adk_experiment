@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     textureVc.tabBarItem = UITabBarItem(title: "Texture", image: UIImage(systemName: "paintbrush"), tag: 0)
     collectionVc.tabBarItem = UITabBarItem(title: "Auto Layout", image: UIImage(systemName: "square.grid.3x2"), tag: 1)
 
-    controller.selectedIndex = 1
+    controller.selectedIndex = 0
 
     return controller
   }()
