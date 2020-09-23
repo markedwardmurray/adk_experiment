@@ -1,14 +1,7 @@
-//
-//  CollectionViewController.swift
-//  Sample
-//
-//  Created by Jonathan Lazar on 9/3/20.
-//  Copyright © 2020 Facebook. All rights reserved.
-//
-
+import AsyncDisplayKit
 import UIKit
 
-final class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+final class HybridCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
   private let cellCount: Int
   private lazy var dataSource = CollectionViewDataSource(cellCount: cellCount)
@@ -35,6 +28,7 @@ final class CollectionViewController: UICollectionViewController, UICollectionVi
     collectionView.register(cell: ThumbnailCell.self)
     collectionView.register(cell: LargeImageCell.self)
     collectionView.register(cell: WebCell.self)
+    collectionView.register(cell: TextureCell<HeadlineSummaryCellNode>.self)
   }
 
   private static let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
@@ -106,9 +100,11 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
       )
       return cell
     case .headlineSummarySection:
-      let cell: HeadlineSummaryCell = collectionView.dequeue(for: indexPath)
-      cell.set(headline: headline, summary: summary)
+      let cell: TextureCell<HeadlineSummaryCellNode> = collectionView.dequeue(for: indexPath)
+      let node = HeadlineSummaryCellNode(headline: headline, summary: summary)
+      cell.customNode = node
       return cell
+
     case .thumbnailCellSection:
       let cell: ThumbnailCell = collectionView.dequeue(for: indexPath)
       cell.set(headline: headline, summary: summary)
@@ -134,3 +130,27 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
     }
   }
 }
+
+final class TextureCell<Node: ASCellNode>: BottomSeparatorCell {
+  // A UIView subclass that is visible on screen
+  var customNode: Node? {
+    didSet {
+      oldValue?.view.removeFromSuperview()
+      if let view = customNode?.view {
+        self.contentView.addSubview(view)
+        view.pinEdgesToSuperView(lowerBottomAndTrailingPriorities: true)
+      }
+    }
+  }
+
+  override func systemLayoutSizeFitting(_ targetSize: CGSize,
+                                        withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
+                                        verticalFittingPriority: UILayoutPriority) -> CGSize {
+    let sizeRange = ASSizeRange(min: CGSize(width: targetSize.width, height: 0), max: CGSize(width: targetSize.width, height: .greatestFiniteMagnitude))
+
+    let layout = customNode?.calculateLayoutThatFits(sizeRange)
+
+    return layout?.size ?? .zero
+  }
+}
+
