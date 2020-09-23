@@ -72,17 +72,7 @@ final class TextureViewController: ASDKViewController<ASDisplayNode>, ASTableDat
     case .thumbnailCellSection:
       node = ThumbnailCellNode(headline: headline, summary: summary)
     case .headlineSummarySection:
-      //node = HeadlineSummaryCellNode(headline: headline, summary: summary)
-      let cell = HeadlineSummaryCell()
-      cell.set(headline: headline, summary: summary)
-      cell.backgroundColor = .red
-
-      let prototypeCell = HeadlineSummaryCell()
-      prototypeCell.set(headline: headline, summary: summary)
-      prototypeCell.backgroundColor = .blue
-
-      //node = BackgroundSafeProtoTypeNode(view: cell, prototypeView: prototypeCell)
-    node = BlockingUIViewNode(view: cell)
+      node = HeadlineSummaryCellNode(headline: headline, summary: summary)
     }
 
     node.selectionStyle = UITableViewCell.SelectionStyle.none
