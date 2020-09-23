@@ -57,7 +57,7 @@ final class TextureViewController: ASDKViewController<ASDisplayNode>, ASTableDat
     case .carouselSection:
       node = ScrollCellNode(numberOfItems: 10)
     case .webCellSection:
-      let url = NSURL(string: "https://secure-ds.serving-sys.com/BurstingRes/Site-85296/WSFolders/7649898/TH029_728x90_r3.hyperesources/TH029_728x90_GiGi.jpg")!
+      let url = URL(string: "https://secure-ds.serving-sys.com/BurstingRes/Site-85296/WSFolders/7649898/TH029_728x90_r3.hyperesources/TH029_728x90_GiGi.jpg")!
       node = WebCellNode(url: url, height: 50)
     case .largeImageCellSection:
       let crop = Crop(imageFilename: "coltrane.jpg", size: CGSize(width: 540, height: 300))
