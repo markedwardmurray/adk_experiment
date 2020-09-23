@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let cellCount = 1000
     let textureVc = TextureViewController(cellCount: cellCount)
     let collectionVc = CollectionViewController(cellCount: cellCount)
-    let hybridTextureVc = TextureViewController(cellCount: cellCount)
+    let hybridTextureVc = HybridTextureViewController(cellCount: cellCount)
     let hybridCollectionVc = CollectionViewController(cellCount: cellCount)
 
     textureVc.title = "Texture"
