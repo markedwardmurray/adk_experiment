@@ -38,6 +38,8 @@
 		D53BDE7D25015FB5001FB387 /* ContentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53BDE7C25015FB5001FB387 /* ContentGenerator.swift */; };
 		D58F43742500385F000101A2 /* LayoutPerformanceTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BF7E2250000250058C51A /* LayoutPerformanceTimeTests.swift */; };
 		D59BF7F1250001410058C51A /* ScrollPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BF7F0250001410058C51A /* ScrollPerformanceTests.swift */; };
+		E4483E0B251BC6A200D2DA84 /* HybridTextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4483E0A251BC6A200D2DA84 /* HybridTextureViewController.swift */; };
+		E4483E0D251BC6AD00D2DA84 /* HybridCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4483E0C251BC6AD00D2DA84 /* HybridCollectionViewController.swift */; };
 		E4C4D39325093F1100A0B9A0 /* LargeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4D39225093F1100A0B9A0 /* LargeImageCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +103,8 @@
 		D59BF7F0250001410058C51A /* ScrollPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPerformanceTests.swift; sourceTree = "<group>"; };
 		D59BF7F2250001410058C51A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5AF9CF752212F650D1F6F93 /* Pods-SampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-SampleUITests/Pods-SampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E4483E0A251BC6A200D2DA84 /* HybridTextureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridTextureViewController.swift; sourceTree = "<group>"; };
+		E4483E0C251BC6AD00D2DA84 /* HybridCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridCollectionViewController.swift; sourceTree = "<group>"; };
 		E4C4D39225093F1100A0B9A0 /* LargeImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeImageCell.swift; sourceTree = "<group>"; };
 		E508B2FBE48578677212D7A2 /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.release.xcconfig"; path = "Target Support Files/Pods-Sample/Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		FAEB3298DD229D79A27BA3B1 /* Pods_SampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +140,7 @@
 		050E7C6519D22E19004363C2 = {
 			isa = PBXGroup;
 			children = (
+				E4483E09251BC69000D2DA84 /* Hybrid */,
 				CDEF690025028431006082AB /* Auto Layout */,
 				CDEF690125028439006082AB /* Texture */,
 				050E7C7019D22E19004363C2 /* Sample */,
@@ -257,6 +262,15 @@
 				D59BF7F2250001410058C51A /* Info.plist */,
 			);
 			path = SampleUITests;
+			sourceTree = "<group>";
+		};
+		E4483E09251BC69000D2DA84 /* Hybrid */ = {
+			isa = PBXGroup;
+			children = (
+				E4483E0A251BC6A200D2DA84 /* HybridTextureViewController.swift */,
+				E4483E0C251BC6AD00D2DA84 /* HybridCollectionViewController.swift */,
+			);
+			path = Hybrid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,8 +465,10 @@
 			files = (
 				94752ABB1DC63B8C00B1B781 /* WebCellNode.swift in Sources */,
 				CDEF691025028A6D006082AB /* Constants.swift in Sources */,
+				E4483E0B251BC6A200D2DA84 /* HybridTextureViewController.swift in Sources */,
 				2A3038B41DC8F7DD00228931 /* RRFPSBar.m in Sources */,
 				2A3038B61DC90F6900228931 /* FooterNode.swift in Sources */,
+				E4483E0D251BC6AD00D2DA84 /* HybridCollectionViewController.swift in Sources */,
 				CD8A69E6250AA67400A04E80 /* WebCell.swift in Sources */,
 				CDEF690825028694006082AB /* FooterView.swift in Sources */,
 				9436AAD51DBA78170029B9B2 /* Crop.swift in Sources */,

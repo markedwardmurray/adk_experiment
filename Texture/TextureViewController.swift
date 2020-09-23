@@ -81,7 +81,8 @@ final class TextureViewController: ASDKViewController<ASDisplayNode>, ASTableDat
       prototypeCell.set(headline: headline, summary: summary)
       prototypeCell.backgroundColor = .blue
 
-      node = BackgroundSafeProtoTypeNode(view: cell, prototypeView: prototypeCell)
+      //node = BackgroundSafeProtoTypeNode(view: cell, prototypeView: prototypeCell)
+    node = BlockingUIViewNode(view: cell)
     }
 
     node.selectionStyle = UITableViewCell.SelectionStyle.none
@@ -95,58 +96,5 @@ final class TextureViewController: ASDKViewController<ASDisplayNode>, ASTableDat
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return cellCount
-  }
-}
-
-final class BlockingUIViewNode: ASCellNode {
-  private let customView: UIView
-
-  init(view: UIView) {
-    self.customView = view
-    super.init()
-    self.setViewBlock { [weak self] () -> UIView in
-      return self?.customView ?? UIView()
-    }
-  }
-
-  override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-    let targetSize = CGSize(width: constrainedSize.max.width, height: constrainedSize.min.height)
-
-    dispatchPrecondition(condition: .notOnQueue(.main))
-
-    return DispatchQueue.main.sync {
-      let size = self.customView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
-      let layoutSpec = ASLayoutSpec()
-
-      layoutSpec.style.preferredSize = size
-      return layoutSpec
-    }
-  }
-}
-
-final class BackgroundSafeProtoTypeNode: ASCellNode {
-  // A UIView subclass that is visible on screen
-  private let customView: UIView
-  // A UIView subclass that is for measurement only
-  private let prototypeView: UIView
-
-  init(view: UIView, prototypeView: UIView) {
-    self.customView = view
-    self.prototypeView = prototypeView
-    super.init()
-    assert(self.customView != self.prototypeView)
-
-    self.setViewBlock { [weak self] () -> UIView in
-      return self?.customView ?? UIView()
-    }
-  }
-
-  override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-    let targetSize = CGSize(width: constrainedSize.max.width, height: constrainedSize.min.height)
-    let size = self.prototypeView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
-    let layoutSpec = ASLayoutSpec()
-
-    layoutSpec.style.preferredSize = size
-    return layoutSpec
   }
 }
