@@ -25,7 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     ASDisableLogging()
-    RRFPSBar.sharedInstance().isHidden = false
+    if ProcessInfo.processInfo.arguments.contains("UITests") {
+      RRFPSBar.sharedInstance().isHidden = false
+    }
     let window = UIWindow(frame: UIScreen.main.bounds)
     window.backgroundColor = UIColor.white
     window.rootViewController = tabBarController
@@ -48,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     textureVc.tabBarItem = UITabBarItem(title: "Texture", image: UIImage(systemName: "paintbrush"), tag: 0)
     collectionVc.tabBarItem = UITabBarItem(title: "Auto Layout", image: UIImage(systemName: "square.grid.3x2"), tag: 1)
 
-    controller.selectedIndex = 1
+    controller.selectedIndex = 0
 
     return controller
   }()
