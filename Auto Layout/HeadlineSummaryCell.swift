@@ -1,5 +1,5 @@
 //
-//  HeadlineSummaryCell.swift
+//  HeadlineSummaryView.swift
 //  Sample
 //
 //  Created by Zev Eisenberg on 9/4/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HeadlineSummaryCell: BottomSeparatorCell {
+final class HeadlineSummaryView: UIView {
 
   private let headlineView = UILabel().configure {
     $0.numberOfLines = 0
@@ -34,11 +34,15 @@ final class HeadlineSummaryCell: BottomSeparatorCell {
     stackView.isLayoutMarginsRelativeArrangement = true
     stackView.layoutMargins = UIEdgeInsets(top: .inset, left: .inset, bottom: 0, right: .inset)
 
-    contentView.addSubview(stackView)
+    addSubview(stackView)
 
-    stackView.pinEdges(to: contentView, lowerBottomAndTrailingPriorities: true)
+    stackView.pinEdges(to: self, lowerBottomAndTrailingPriorities: true)
   }
-
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   func set(headline: String, summary: String) {
     headlineView.attributedText = NSAttributedString(
       string: headline,
