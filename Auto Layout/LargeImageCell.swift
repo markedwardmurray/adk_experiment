@@ -106,4 +106,11 @@ final class LargeImageCell: BottomSeparatorCell {
 
     footerView.isHidden = hideFooter
   }
+
+  override func systemLayoutSizeFitting(_ targetSize: CGSize,
+                                        withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
+                                        verticalFittingPriority: UILayoutPriority) -> CGSize {
+    let size = super.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: horizontalFittingPriority, verticalFittingPriority: verticalFittingPriority)
+    return size
+  }
 }

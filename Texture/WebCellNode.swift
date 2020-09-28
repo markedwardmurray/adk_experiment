@@ -14,10 +14,10 @@ final class WebCellNode: ASCellNode {
   var disclaimerNode = ASTextNode()
   var webNode = ASDisplayNode()
   var webView: WKWebView?
-  var url: NSURL = NSURL()
+  var url: URL?
   var height: CGFloat = 0
   
-  convenience init(url: NSURL, height: CGFloat) {
+  convenience init(url: URL, height: CGFloat) {
     self.init()
     self.url = url
     self.height = height
@@ -41,7 +41,7 @@ final class WebCellNode: ASCellNode {
     super.didLoad()
     webView = WKWebView(frame: webNode.bounds)
     webView?.scrollView.isScrollEnabled = false
-    if let webView = webView {
+    if let webView = webView, let url = url {
       webView.load(NSURLRequest(url: url as URL) as URLRequest)
       webNode.view.addSubview(webView)
     }

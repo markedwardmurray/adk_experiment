@@ -40,15 +40,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let cellCount = 1000
     let textureVc = TextureViewController(cellCount: cellCount)
     let collectionVc = CollectionViewController(cellCount: cellCount)
+    let hybridCollectionVc = HybridCollectionViewController(cellCount: cellCount)
 
     textureVc.title = "Texture"
     collectionVc.title = "Auto Layout"
+    hybridCollectionVc.title = "AL w/ Texture Cells"
 
     let controller = UITabBarController()
-    controller.viewControllers = [textureVc, collectionVc].map(UINavigationController.init(rootViewController:))
+    controller.viewControllers = [textureVc,
+                                  collectionVc,
+                                  hybridCollectionVc
+    ].map(UINavigationController.init(rootViewController:))
 
     textureVc.tabBarItem = UITabBarItem(title: "Texture", image: UIImage(systemName: "paintbrush"), tag: 0)
     collectionVc.tabBarItem = UITabBarItem(title: "Auto Layout", image: UIImage(systemName: "square.grid.3x2"), tag: 1)
+    hybridCollectionVc.tabBarItem = UITabBarItem(title: "AL w/ Texture Cells", image: UIImage(systemName: "square.on.square.squareshape.controlhandles"), tag: 1)
 
     controller.selectedIndex = 0
 

@@ -1,14 +1,7 @@
-//
-//  CollectionViewController.swift
-//  Sample
-//
-//  Created by Jonathan Lazar on 9/3/20.
-//  Copyright © 2020 Facebook. All rights reserved.
-//
-
+import AsyncDisplayKit
 import UIKit
 
-final class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+final class HybridCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
   private let cellCount: Int
   private lazy var dataSource = CollectionViewDataSource(cellCount: cellCount)
@@ -31,10 +24,10 @@ final class CollectionViewController: UICollectionViewController, UICollectionVi
     collectionView.backgroundColor = .systemBackground
     collectionView.dataSource = dataSource
     collectionView.delegate = self
-    collectionView.register(cell: HeadlineSummaryCell.self)
-    collectionView.register(cell: ThumbnailCell.self)
-    collectionView.register(cell: LargeImageCell.self)
-    collectionView.register(cell: WebCell.self)
+    collectionView.register(cell: TextureWrapperCell<HeadlineSummaryCellNode>.self)
+    collectionView.register(cell: TextureWrapperCell<ThumbnailCellNode>.self)
+    collectionView.register(cell: TextureWrapperCell<LargeImageCellNode>.self)
+    collectionView.register(cell: TextureWrapperCell<WebCellNode>.self)
   }
 
   private static let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
@@ -95,8 +88,8 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
 
     switch Section(indexPath.section) {
     case .carouselSection:
-      let cell: LargeImageCell = collectionView.dequeue(for: indexPath)
-      cell.set(
+      let cell: TextureWrapperCell<LargeImageCellNode> = collectionView.dequeue(for: indexPath)
+      cell.customNode = LargeImageCellNode(
         headline: "Miles Davis",
         summary: "Miles Dewey Davis III was an American jazz trumpeter, bandleader, and composer.",
         kicker: "",
@@ -106,16 +99,16 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
       )
       return cell
     case .headlineSummarySection:
-      let cell: HeadlineSummaryCell = collectionView.dequeue(for: indexPath)
-      cell.set(headline: headline, summary: summary)
+      let cell: TextureWrapperCell<HeadlineSummaryCellNode> = collectionView.dequeue(for: indexPath)
+      cell.customNode = HeadlineSummaryCellNode(headline: headline, summary: summary)
       return cell
     case .thumbnailCellSection:
-      let cell: ThumbnailCell = collectionView.dequeue(for: indexPath)
-      cell.set(headline: headline, summary: summary)
+      let cell: TextureWrapperCell<ThumbnailCellNode> = collectionView.dequeue(for: indexPath)
+      cell.customNode = ThumbnailCellNode(headline: headline, summary: summary)
       return cell
     case .largeImageCellSection:
-      let cell: LargeImageCell = collectionView.dequeue(for: indexPath)
-      cell.set(
+      let cell: TextureWrapperCell<LargeImageCellNode> = collectionView.dequeue(for: indexPath)
+      cell.customNode = LargeImageCellNode(
         headline: headline,
         summary: summary,
         kicker: "KICKER",
@@ -125,8 +118,8 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
       )
       return cell
     case .webCellSection:
-      let cell: WebCell = collectionView.dequeue(for: indexPath)
-      cell.set(
+      let cell: TextureWrapperCell<WebCellNode> = collectionView.dequeue(for: indexPath)
+      cell.customNode = WebCellNode(
         url: URL(string: "https://secure-ds.serving-sys.com/BurstingRes/Site-85296/WSFolders/7649898/TH029_728x90_r3.hyperesources/TH029_728x90_GiGi.jpg")!,
         height: 50
       )
