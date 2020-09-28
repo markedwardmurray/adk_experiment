@@ -46,6 +46,7 @@ final class ThumbnailCell: BottomSeparatorCell {
 
     NSLayoutConstraint.activate([
       imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: textView.textContainerInset.top),
+      imageView.bottomAnchor.constraint(lessThanOrEqualTo: textView.bottomAnchor).withPriority(.required - 1),
       imageView.trailingAnchor.constraint(equalTo: textView.trailingAnchor),
       imageView.widthAnchor.constraint(equalToConstant: thumbnailSize.width),
       imageView.heightAnchor.constraint(equalToConstant: thumbnailSize.height)
