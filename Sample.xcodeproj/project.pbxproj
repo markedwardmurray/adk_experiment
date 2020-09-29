@@ -39,6 +39,7 @@
 		D53BDE7D25015FB5001FB387 /* ContentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53BDE7C25015FB5001FB387 /* ContentGenerator.swift */; };
 		D58F43742500385F000101A2 /* LayoutPerformanceTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BF7E2250000250058C51A /* LayoutPerformanceTimeTests.swift */; };
 		D59BF7F1250001410058C51A /* ScrollPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BF7F0250001410058C51A /* ScrollPerformanceTests.swift */; };
+		E413EE622523876C004ED21D /* SuperMegaiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E413EE612523876C004ED21D /* SuperMegaiPadView.swift */; };
 		E43CE9D9252270D400408E8D /* WrapperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43CE9D8252270D400408E8D /* WrapperCell.swift */; };
 		E4483E0D251BC6AD00D2DA84 /* HybridCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4483E0C251BC6AD00D2DA84 /* HybridCollectionViewController.swift */; };
 		E4C4D39325093F1100A0B9A0 /* LargeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4D39225093F1100A0B9A0 /* LargeImageView.swift */; };
@@ -105,6 +106,7 @@
 		D59BF7F0250001410058C51A /* ScrollPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPerformanceTests.swift; sourceTree = "<group>"; };
 		D59BF7F2250001410058C51A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5AF9CF752212F650D1F6F93 /* Pods-SampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-SampleUITests/Pods-SampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E413EE612523876C004ED21D /* SuperMegaiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperMegaiPadView.swift; sourceTree = "<group>"; };
 		E43CE9D8252270D400408E8D /* WrapperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperCell.swift; sourceTree = "<group>"; };
 		E4483E0C251BC6AD00D2DA84 /* HybridCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridCollectionViewController.swift; sourceTree = "<group>"; };
 		E4C4D39225093F1100A0B9A0 /* LargeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeImageView.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				D53BDD6E25013B73001FB387 /* CollectionViewController.swift */,
 				E43CE9D8252270D400408E8D /* WrapperCell.swift */,
+				E413EE612523876C004ED21D /* SuperMegaiPadView.swift */,
 				CDEF690D25028880006082AB /* BottomSeparatorCell.swift */,
 				CDEF690325028637006082AB /* ThumbnailView.swift */,
 				CDEF69052502867C006082AB /* HeadlineSummaryView.swift */,
@@ -481,6 +484,7 @@
 				2A3038B61DC90F6900228931 /* FooterNode.swift in Sources */,
 				E4483E0D251BC6AD00D2DA84 /* HybridCollectionViewController.swift in Sources */,
 				CD8A69E6250AA67400A04E80 /* WebView.swift in Sources */,
+				E413EE622523876C004ED21D /* SuperMegaiPadView.swift in Sources */,
 				CDEF690825028694006082AB /* FooterView.swift in Sources */,
 				E43CE9D9252270D400408E8D /* WrapperCell.swift in Sources */,
 				9436AAD51DBA78170029B9B2 /* Crop.swift in Sources */,
