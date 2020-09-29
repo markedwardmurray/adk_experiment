@@ -1,5 +1,5 @@
 //
-//  ThumbnailCell.swift
+//  ThumbnailView.swift
 //  Sample
 //
 //  Created by Zev Eisenberg on 9/4/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ThumbnailCell: BottomSeparatorCell {
+final class ThumbnailView: UIView {
 
   private let textView = UITextView().configure {
     $0.isUserInteractionEnabled = false
@@ -38,21 +38,25 @@ final class ThumbnailCell: BottomSeparatorCell {
     stackView.isLayoutMarginsRelativeArrangement = true
     stackView.layoutMargins = UIEdgeInsets(top: 0, left: .inset, bottom: 0, right: .inset)
 
-    contentView.addSubview(stackView)
-    contentView.addSubview(imageView)
+    addSubview(stackView)
+    addSubview(imageView)
 
-    stackView.pinEdges(to: contentView)
+    stackView.pinEdges(to: self)
     imageView.translatesAutoresizingMaskIntoConstraints = false
 
     NSLayoutConstraint.activate([
-      imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: textView.textContainerInset.top),
+      imageView.topAnchor.constraint(equalTo: topAnchor, constant: textView.textContainerInset.top),
       imageView.bottomAnchor.constraint(lessThanOrEqualTo: textView.bottomAnchor).withPriority(.required - 1),
       imageView.trailingAnchor.constraint(equalTo: textView.trailingAnchor),
       imageView.widthAnchor.constraint(equalToConstant: thumbnailSize.width),
       imageView.heightAnchor.constraint(equalToConstant: thumbnailSize.height)
     ])
   }
-
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
 
     let margin: CGFloat = 5

@@ -1,5 +1,5 @@
 //
-//  LargeImageCell.swift
+//  LargeImageView.swift
 //  Sample
 //
 //  Created by Su, Wei-Lun on 9/8/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class LargeImageCell: BottomSeparatorCell {
+final class LargeImageView: UIView {
 
   private let headlineLabel = UILabel().configure {
     $0.translatesAutoresizingMaskIntoConstraints = false
@@ -60,10 +60,14 @@ final class LargeImageCell: BottomSeparatorCell {
       summaryLabel,
       footerView,
     ])
-    contentView.addSubview(mainStack)
+    addSubview(mainStack)
     mainStack.pinEdgesToSuperView(lowerBottomAndTrailingPriorities: true)
     mainStack.isLayoutMarginsRelativeArrangement = true
     mainStack.layoutMargins = UIEdgeInsets(all: 10)
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 
   func set(headline: String, summary: String, kicker: String, credit: String, hideFooter: Bool, crop: Crop) {
@@ -105,12 +109,5 @@ final class LargeImageCell: BottomSeparatorCell {
     kickerLabel.isHidden = kicker.isEmpty
 
     footerView.isHidden = hideFooter
-  }
-
-  override func systemLayoutSizeFitting(_ targetSize: CGSize,
-                                        withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
-                                        verticalFittingPriority: UILayoutPriority) -> CGSize {
-    let size = super.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: horizontalFittingPriority, verticalFittingPriority: verticalFittingPriority)
-    return size
   }
 }

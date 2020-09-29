@@ -31,10 +31,11 @@ final class CollectionViewController: UICollectionViewController, UICollectionVi
     collectionView.backgroundColor = .systemBackground
     collectionView.dataSource = dataSource
     collectionView.delegate = self
-    collectionView.register(cell: HeadlineSummaryCell.self)
-    collectionView.register(cell: ThumbnailCell.self)
-    collectionView.register(cell: LargeImageCell.self)
-    collectionView.register(cell: WebCell.self)
+    collectionView.register(cell: WrapperCell<HeadlineSummaryView>.self)
+    collectionView.register(cell: WrapperCell<ThumbnailView>.self)
+    collectionView.register(cell: WrapperCell<LargeImageView>.self)
+    collectionView.register(cell: WrapperCell<WebView>.self)
+    collectionView.register(cell: WrapperCell<SuperMegaiPadView>.self)
   }
 
   private static let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
@@ -95,8 +96,8 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
 
     switch Section(indexPath.section) {
     case .carouselSection:
-      let cell: LargeImageCell = collectionView.dequeue(for: indexPath)
-      cell.set(
+      let cell: WrapperCell<LargeImageView> = collectionView.dequeue(for: indexPath)
+      cell.customView.set(
         headline: "Miles Davis",
         summary: "Miles Dewey Davis III was an American jazz trumpeter, bandleader, and composer.",
         kicker: "",
@@ -106,27 +107,20 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
       )
       return cell
     case .headlineSummarySection:
-      let cell: HeadlineSummaryCell = collectionView.dequeue(for: indexPath)
-      cell.set(headline: headline, summary: summary)
+      let cell: WrapperCell<HeadlineSummaryView> = collectionView.dequeue(for: indexPath)
+      cell.customView.set(headline: headline, summary: summary)
       return cell
     case .thumbnailCellSection:
-      let cell: ThumbnailCell = collectionView.dequeue(for: indexPath)
-      cell.set(headline: headline, summary: summary)
+      let cell: WrapperCell<ThumbnailView> = collectionView.dequeue(for: indexPath)
+      cell.customView.set(headline: headline, summary: summary)
       return cell
     case .largeImageCellSection:
-      let cell: LargeImageCell = collectionView.dequeue(for: indexPath)
-      cell.set(
-        headline: headline,
-        summary: summary,
-        kicker: "KICKER",
-        credit: "Photo by Joe Blow",
-        hideFooter: false,
-        crop: Crop(imageFilename: "coltrane.jpg", size: CGSize(width: 540, height: 300))
-      )
+      let cell: WrapperCell<SuperMegaiPadView> = collectionView.dequeue(for: indexPath)
       return cell
+
     case .webCellSection:
-      let cell: WebCell = collectionView.dequeue(for: indexPath)
-      cell.set(
+      let cell: WrapperCell<WebView> = collectionView.dequeue(for: indexPath)
+      cell.customView.set(
         url: URL(string: "https://secure-ds.serving-sys.com/BurstingRes/Site-85296/WSFolders/7649898/TH029_728x90_r3.hyperesources/TH029_728x90_GiGi.jpg")!,
         height: 50
       )

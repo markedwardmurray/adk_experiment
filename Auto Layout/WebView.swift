@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-final class WebCell: BottomSeparatorCell {
+final class WebView: UIView {
 
   private let disclaimerLabel = UILabel().configure {
     let paragraphStyle = NSMutableParagraphStyle()
@@ -38,10 +38,14 @@ final class WebCell: BottomSeparatorCell {
     ])
     stack.isLayoutMarginsRelativeArrangement = true
     stack.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
-    contentView.addSubview(stack)
+    addSubview(stack)
     stack.pinEdgesToSuperView(lowerBottomAndTrailingPriorities: true)
   }
-
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   func set(url: URL, height: CGFloat) {
     webView.load(URLRequest(url: url))
     webViewHeightConstraint.constant = height
