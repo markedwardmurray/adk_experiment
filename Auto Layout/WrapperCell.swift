@@ -32,13 +32,66 @@ final class SuperMegaiPadView: UIView {
 
     let headline = ContentGenerator.thisManyWords(2...8)
     let summary = ContentGenerator.thisManyWords(20...40)
+
+    let webCell = WebView()
+    webCell.set(
+      url: URL(string: "https://secure-ds.serving-sys.com/BurstingRes/Site-85296/WSFolders/7649898/TH029_728x90_r3.hyperesources/TH029_728x90_GiGi.jpg")!,
+      height: 50
+    )
+
+    let mainStack = UIStackView(axis: .vertical, arrangedSubviews: [
+      twoColumnsStackView(headline: headline, summary: summary),
+      threeColumnsStackView(headline: headline, summary: summary),
+      webCell,
+    ])
+
+    addSubview(mainStack)
+    mainStack.pinEdgesToSuperView(lowerBottomAndTrailingPriorities: true)
+    mainStack.isLayoutMarginsRelativeArrangement = true
+    mainStack.layoutMargins = UIEdgeInsets(all: 10)
+  }
+
+  private func twoColumnsStackView(headline: String, summary: String) -> UIStackView {
+    let largeImageView = LargeImageView()
+    let smallImageView = LargeImageView()
+    let headlineSummaryView = HeadlineSummaryView()
+
+    largeImageView.set(
+      headline: headline,
+      summary: summary,
+      kicker: "KICKER",
+      credit: "Photo by Joe Blow",
+      hideFooter: false,
+      crop: Crop(imageFilename: "coltrane.jpg", size: CGSize(width: 540, height: 300))
+    )
+    smallImageView.set(
+      headline: headline,
+      summary: summary,
+      kicker: "",
+      credit: "",
+      hideFooter: true,
+      crop: Crop(imageFilename: "coltrane.jpg", size: CGSize(width: 540, height: 300))
+    )
+    headlineSummaryView.set(headline: headline, summary: summary)
+
+    let verticalChildStackView = UIStackView(axis: .vertical, spacing: 2, arrangedSubviews: [
+      smallImageView,
+      headlineSummaryView
+    ])
+
+    let twoColumnsStackView = UIStackView(axis: .horizontal, spacing: 2, arrangedSubviews: [
+      largeImageView,
+      verticalChildStackView
+    ])
+    twoColumnsStackView.distribution = .fillProportionally
+    return twoColumnsStackView
+  }
+
+  private func threeColumnsStackView(headline: String, summary: String) -> UIStackView {
     let largeImageView = LargeImageView()
     let smallImageView = LargeImageView()
     let headlineSummaryView = HeadlineSummaryView()
     let thumbnailView = ThumbnailView()
-    let webCell = WebView()
-
-    // MARK: - Configure UIViews
 
     largeImageView.set(
       headline: headline,
@@ -58,57 +111,19 @@ final class SuperMegaiPadView: UIView {
     )
     headlineSummaryView.set(headline: headline, summary: summary)
     thumbnailView.set(headline: headline, summary: summary)
-    webCell.set(
-      url: URL(string: "https://secure-ds.serving-sys.com/BurstingRes/Site-85296/WSFolders/7649898/TH029_728x90_r3.hyperesources/TH029_728x90_GiGi.jpg")!,
-      height: 50
-    )
 
-    // MARK: - Configure StackViews
-
-    let childStackView = UIStackView(axis: .vertical, spacing: 2, arrangedSubviews: [
+    let verticalChildStackView = UIStackView(axis: .vertical, spacing: 2, arrangedSubviews: [
       smallImageView,
       headlineSummaryView
     ])
-
-    let secondChildStack = UIStackView(axis: .vertical, spacing: 2, arrangedSubviews: [
-      largeImageView,
-      headlineSummaryView
-    ])
-
-    let firstSectionStackView = UIStackView(axis: .horizontal, spacing: 2, arrangedSubviews: [
-      largeImageView,
-      childStackView
-    ])
-
-    firstSectionStackView.distribution = .fillEqually
-    firstSectionStackView.backgroundColor = .red
-
-
-    let secondSectionStackView = UIStackView(axis: .horizontal, spacing: 2, arrangedSubviews: [
+    let threeColumnsStackView = UIStackView(axis: .horizontal, spacing: 2, arrangedSubviews: [
       largeImageView,
       thumbnailView,
-      secondChildStack
+      verticalChildStackView
     ])
+    threeColumnsStackView.distribution = .fillEqually
 
-    secondSectionStackView.distribution = .fillEqually
-    secondSectionStackView.backgroundColor = .blue
-
-    let mainStack = UIStackView(axis: .vertical, spacing: 10, arrangedSubviews: [
-      firstSectionStackView,
-      secondSectionStackView,
-      webCell,
-    ])
-
-    addSubview(mainStack)
-
-    mainStack.pinEdgesToSuperView(lowerBottomAndTrailingPriorities: true)
-    mainStack.isLayoutMarginsRelativeArrangement = true
-    mainStack.layoutMargins = UIEdgeInsets(all: 10)
-
-    NSLayoutConstraint.activate([
-      //largeImageView.widthAnchor.constraint(equalToConstant: 400),
-      //largeImageView.widthAnchor.constraint(equalTo: childStackView.widthAnchor, multiplier: 2),
-    ])
+    return threeColumnsStackView
   }
 
   required init?(coder: NSCoder) {
