@@ -28,22 +28,17 @@ final class SuperMegaiPadView: UIView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
-
     backgroundColor = .white
 
     let headline = ContentGenerator.thisManyWords(2...8)
     let summary = ContentGenerator.thisManyWords(20...40)
-
     let largeImageView = LargeImageView()
-    largeImageView.accessibilityIdentifier = "largeImageView"
-    let imageView = LargeImageView()
-    imageView.accessibilityIdentifier = "imageView"
+    let smallImageView = LargeImageView()
     let headlineSummaryView = HeadlineSummaryView()
-    headlineSummaryView.accessibilityIdentifier = "headlineSummaryView"
     let thumbnailView = ThumbnailView()
-    thumbnailView.accessibilityIdentifier = "thumbnailView"
     let webCell = WebView()
-    webCell.accessibilityIdentifier = "webCell"
+
+    // MARK: - Configure UIViews
 
     largeImageView.set(
       headline: headline,
@@ -53,8 +48,7 @@ final class SuperMegaiPadView: UIView {
       hideFooter: false,
       crop: Crop(imageFilename: "coltrane.jpg", size: CGSize(width: 540, height: 300))
     )
-
-    imageView.set(
+    smallImageView.set(
       headline: headline,
       summary: summary,
       kicker: "",
@@ -62,36 +56,33 @@ final class SuperMegaiPadView: UIView {
       hideFooter: true,
       crop: Crop(imageFilename: "coltrane.jpg", size: CGSize(width: 540, height: 300))
     )
-
     headlineSummaryView.set(headline: headline, summary: summary)
-    
     thumbnailView.set(headline: headline, summary: summary)
-
     webCell.set(
       url: URL(string: "https://secure-ds.serving-sys.com/BurstingRes/Site-85296/WSFolders/7649898/TH029_728x90_r3.hyperesources/TH029_728x90_GiGi.jpg")!,
       height: 50
     )
 
-    let childStackView = UIStackView(axis: .vertical,
-                                 spacing: 2,
-                                 arrangedSubviews: [
-                                      imageView,
-                                      headlineSummaryView
-                                     ])
-    childStackView.accessibilityIdentifier = "childStackView"
+    // MARK: - Configure StackViews
 
+    let childStackView = UIStackView(axis: .vertical, spacing: 2, arrangedSubviews: [
+      smallImageView,
+      headlineSummaryView
+    ])
+
+    let secondChildStack = UIStackView(axis: .vertical, spacing: 2, arrangedSubviews: [
+      largeImageView,
+      headlineSummaryView
+    ])
 
     let firstSectionStackView = UIStackView(axis: .horizontal, spacing: 2, arrangedSubviews: [
       largeImageView,
       childStackView
     ])
 
-    firstSectionStackView.accessibilityIdentifier = "firstSectionStackView"
+    firstSectionStackView.distribution = .fillEqually
+    firstSectionStackView.backgroundColor = .red
 
-    let secondChildStack = UIStackView(axis: .vertical, spacing: 2, arrangedSubviews: [
-      largeImageView,
-      headlineSummaryView
-    ])
 
     let secondSectionStackView = UIStackView(axis: .horizontal, spacing: 2, arrangedSubviews: [
       largeImageView,
@@ -99,16 +90,14 @@ final class SuperMegaiPadView: UIView {
       secondChildStack
     ])
 
-    secondSectionStackView.accessibilityIdentifier = "secondSectionStackView"
+    secondSectionStackView.distribution = .fillEqually
+    secondSectionStackView.backgroundColor = .blue
 
     let mainStack = UIStackView(axis: .vertical, spacing: 10, arrangedSubviews: [
       firstSectionStackView,
       secondSectionStackView,
       webCell,
     ])
-
-    mainStack.accessibilityIdentifier = "mainStack"
-
 
     addSubview(mainStack)
 
@@ -117,7 +106,8 @@ final class SuperMegaiPadView: UIView {
     mainStack.layoutMargins = UIEdgeInsets(all: 10)
 
     NSLayoutConstraint.activate([
-      largeImageView.widthAnchor.constraint(equalTo: childStackView.widthAnchor, multiplier: 2),
+      //largeImageView.widthAnchor.constraint(equalToConstant: 400),
+      //largeImageView.widthAnchor.constraint(equalTo: childStackView.widthAnchor, multiplier: 2),
     ])
   }
 
