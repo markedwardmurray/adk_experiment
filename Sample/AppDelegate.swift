@@ -25,7 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     ASDisableLogging()
-    RRFPSBar.sharedInstance().isHidden = ProcessInfo.processInfo.arguments.contains("UITests")
+    if ProcessInfo.processInfo.arguments.contains("UITests") == false {
+          RRFPSBar.sharedInstance().isHidden = false
+    }
     let window = UIWindow(frame: UIScreen.main.bounds)
     window.backgroundColor = UIColor.white
     window.rootViewController = tabBarController
