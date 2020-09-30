@@ -27,11 +27,13 @@ final class FooterView: UIView {
   private let shareButton = UIButton().configure {
     $0.setBackgroundImage(UIImage(named: "NYTShareIcon"), for: .normal)
     $0.setContentHuggingPriority(.required, for: .horizontal)
+    $0.setContentHuggingPriority(.required, for: .vertical)
   }
 
   private let saveButton = UIButton().configure {
     $0.setBackgroundImage(UIImage(named: "NYTSaveIcon"), for: .normal)
     $0.setContentHuggingPriority(.required, for: .horizontal)
+    $0.setContentHuggingPriority(.required, for: .vertical)
   }
 
   override init(frame: CGRect) {

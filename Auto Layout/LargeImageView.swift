@@ -19,6 +19,7 @@ final class LargeImageView: UIView {
   private let summaryLabel = UILabel().configure {
     $0.numberOfLines = 0
     $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.setContentHuggingPriority(.required, for: .vertical)
     $0.setContentCompressionResistancePriority(.defaultHigh - 1, for: .vertical)
   }
 
@@ -35,13 +36,12 @@ final class LargeImageView: UIView {
 
   private let footerView = FooterView()
 
-  private let imageView: UIImageView = {
-    let imageView = UIImageView()
-    imageView.contentMode = .scaleAspectFill
-    imageView.clipsToBounds = true
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    return imageView
-  }()
+  private let imageView = UIImageView().configure {
+    $0.contentMode = .scaleAspectFill
+    $0.clipsToBounds = true
+    $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.setContentHuggingPriority(.defaultLow - 1, for: .vertical) // lower than labels
+  }
 
   private var imageAspectConstraint = NSLayoutConstraint()
 
