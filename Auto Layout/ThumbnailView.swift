@@ -58,20 +58,16 @@ final class ThumbnailView: UIView {
   }
   
   override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-
-    let margin: CGFloat = 5
-    let rect = CGRect(
-      x: targetSize.width - stackView.layoutMargins.left - stackView.layoutMargins.right - thumbnailSize.width - margin - textView.textContainerInset.left - textView.textContainerInset.right,
-      y: 0,
-      width: thumbnailSize.width + margin + textView.textContainerInset.left + textView.textContainerInset.right,
-      height: thumbnailSize.height + margin
-    )
-    let exclusionPath = UIBezierPath(rect: rect)
-    textView.textContainer.exclusionPaths = [exclusionPath]
-
+    updateExclusionPaths(targetWidth: targetSize.width)
+    
     let size = super.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: horizontalFittingPriority, verticalFittingPriority: verticalFittingPriority)
 
     return size
+  }
+
+  override func layoutSubviews() {
+    updateExclusionPaths(targetWidth: bounds.width)
+    super.layoutSubviews()
   }
 
   func set(headline: String, summary: String) {
@@ -94,5 +90,17 @@ final class ThumbnailView: UIView {
     string.append(summary)
 
     textView.attributedText = string
+  }
+
+  private func updateExclusionPaths(targetWidth: CGFloat) {
+    let margin: CGFloat = 5
+    let rect = CGRect(
+      x: targetWidth - stackView.layoutMargins.left - stackView.layoutMargins.right - thumbnailSize.width - margin - textView.textContainerInset.left - textView.textContainerInset.right,
+      y: 0,
+      width: thumbnailSize.width + margin + textView.textContainerInset.left + textView.textContainerInset.right,
+      height: thumbnailSize.height + margin
+    )
+    let exclusionPath = UIBezierPath(rect: rect)
+    textView.textContainer.exclusionPaths = [exclusionPath]
   }
 }
