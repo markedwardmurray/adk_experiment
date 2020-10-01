@@ -115,8 +115,22 @@ final private class CollectionViewDataSource: NSObject, UICollectionViewDataSour
       cell.customView.set(headline: headline, summary: summary)
       return cell
     case .largeImageCellSection:
-      let cell: WrapperCell<SuperMegaiPadView> = collectionView.dequeue(for: indexPath)
-      return cell
+      let isTablet = UIDevice.current.userInterfaceIdiom == .pad
+      if isTablet {
+        let cell: WrapperCell<SuperMegaiPadView> = collectionView.dequeue(for: indexPath)
+        return cell
+      } else {
+        let cell: WrapperCell<LargeImageView> = collectionView.dequeue(for: indexPath)
+        cell.customView.set(
+          headline: headline,
+          summary: summary,
+          kicker: "KICKER",
+          credit: "Photo by Joe Blow",
+          hideFooter: false,
+          crop: Crop(imageFilename: "coltrane.jpg", size: CGSize(width: 540, height: 300))
+        )
+        return cell
+      }
 
     case .webCellSection:
       let cell: WrapperCell<WebView> = collectionView.dequeue(for: indexPath)
