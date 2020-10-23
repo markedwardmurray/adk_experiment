@@ -30,7 +30,7 @@ final class WebCellNode: ASCellNode {
       attributes: [
         .font: UIFont.systemFont(ofSize: 9.0),
         .paragraphStyle: paragraphStyle,
-        .foregroundColor: UIColor.lightGray
+        .foregroundColor: UIColor.disclaimerText
       ])
     
     addSubnode(disclaimerNode)
