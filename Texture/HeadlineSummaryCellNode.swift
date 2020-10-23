@@ -21,14 +21,14 @@ final class HeadlineSummaryCellNode: ASCellNode {
       string: headline,
       attributes: [
         .font: UIFont.boldSystemFont(ofSize: 18),
-        .foregroundColor: UIColor.black
+        .foregroundColor: UIColor.headlineText
       ])
 
     summaryNode.attributedText = NSAttributedString(
       string: summary,
       attributes: [
         .font: UIFont.systemFont(ofSize: 14),
-        .foregroundColor: UIColor.darkGray
+        .foregroundColor: UIColor.bodyText
       ])
 
     addSubnode(headlineNode)
