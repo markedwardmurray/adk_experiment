@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		050E7C7419D22E19004363C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050E7C7319D22E19004363C2 /* AppDelegate.swift */; };
 		050E7C7619D22E19004363C2 /* TextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050E7C7519D22E19004363C2 /* TextureViewController.swift */; };
+		1DE4EF9F2554BABF00791B8D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4EF9E2554BABF00791B8D /* Colors.xcassets */; };
+		1DE4EFA42554C9D400791B8D /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE4EFA32554C9D400791B8D /* UIColor+Colors.swift */; };
 		2A3038B01DC8F02C00228931 /* miles.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3038AF1DC8F02C00228931 /* miles.png */; };
 		2A3038B41DC8F7DD00228931 /* RRFPSBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3038B31DC8F7DD00228931 /* RRFPSBar.m */; };
 		2A3038B61DC90F6900228931 /* FooterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3038B51DC90F6900228931 /* FooterNode.swift */; };
@@ -66,6 +68,8 @@
 		050E7C6E19D22E19004363C2 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		050E7C7319D22E19004363C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		050E7C7519D22E19004363C2 /* TextureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureViewController.swift; sourceTree = "<group>"; };
+		1DE4EF9E2554BABF00791B8D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1DE4EFA32554C9D400791B8D /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		2A3038AF1DC8F02C00228931 /* miles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = miles.png; sourceTree = "<group>"; };
 		2A3038B11DC8F7DC00228931 /* Sample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sample-Bridging-Header.h"; sourceTree = "<group>"; };
 		2A3038B21DC8F7DD00228931 /* RRFPSBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRFPSBar.h; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				050E7C7319D22E19004363C2 /* AppDelegate.swift */,
 				9436AAD41DBA78170029B9B2 /* Crop.swift */,
 				CDA802F9250AB27B003C27D3 /* Section.swift */,
+				1DE4EFA32554C9D400791B8D /* UIColor+Colors.swift */,
 				2A3038B21DC8F7DD00228931 /* RRFPSBar.h */,
 				2A3038B31DC8F7DD00228931 /* RRFPSBar.m */,
 				CD55E8152509460E00F86A08 /* Supporting Files */,
@@ -211,6 +216,7 @@
 				9436AAD21DB9A0D80029B9B2 /* coltrane.jpg */,
 				2A3038AF1DC8F02C00228931 /* miles.png */,
 				2A3038B71DC9119200228931 /* Media.xcassets */,
+				1DE4EF9E2554BABF00791B8D /* Colors.xcassets */,
 				CD55E8162509460E00F86A08 /* Info.plist */,
 				CD55E8182509465900F86A08 /* Launch Screen.storyboard */,
 			);
@@ -404,6 +410,7 @@
 				CD55E8192509465900F86A08 /* Launch Screen.storyboard in Resources */,
 				9436AAD31DB9A0D80029B9B2 /* coltrane.jpg in Resources */,
 				9436AACF1DB835C40029B9B2 /* thumbnail.jpg in Resources */,
+				1DE4EF9F2554BABF00791B8D /* Colors.xcassets in Resources */,
 				2A3038B81DC9119200228931 /* Media.xcassets in Resources */,
 				2A3038B01DC8F02C00228931 /* miles.png in Resources */,
 			);
@@ -494,6 +501,7 @@
 				CDEF69062502867C006082AB /* HeadlineSummaryView.swift in Sources */,
 				9436AAD11DB9A0290029B9B2 /* LargeImageCellNode.swift in Sources */,
 				D53BDE7D25015FB5001FB387 /* ContentGenerator.swift in Sources */,
+				1DE4EFA42554C9D400791B8D /* UIColor+Colors.swift in Sources */,
 				9436AACB1DB81B6C0029B9B2 /* HeadlineSummaryCellNode.swift in Sources */,
 				CDEF690425028637006082AB /* ThumbnailView.swift in Sources */,
 				CDA802FA250AB27B003C27D3 /* Section.swift in Sources */,
