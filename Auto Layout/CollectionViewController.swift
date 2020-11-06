@@ -27,8 +27,8 @@ final class CollectionViewController: UICollectionViewController, UICollectionVi
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .systemBackground
-    collectionView.backgroundColor = .systemBackground
+    view.backgroundColor = .timesWhite
+    collectionView.backgroundColor = .timesWhite
     collectionView.dataSource = dataSource
     collectionView.delegate = self
     collectionView.register(cell: WrapperCell<HeadlineSummaryView>.self)

@@ -15,7 +15,7 @@ class BottomSeparatorCell: UICollectionViewCell, Reusable {
 
     let separator = UIView()
     contentView.addSubview(separator)
-    separator.backgroundColor = .separator
+    separator.backgroundColor = .timesGray60
     separator.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       separator.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),

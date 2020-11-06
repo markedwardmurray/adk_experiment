@@ -19,7 +19,7 @@ final class FooterView: UIView {
       string: displayDate,
       attributes: [
         .font: UIFont.systemFont(ofSize: 12),
-        .foregroundColor: UIColor.gray
+        .foregroundColor: UIColor.timesGray50
       ])
     return label
   }()

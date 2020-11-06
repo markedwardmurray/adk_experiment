@@ -25,7 +25,7 @@ final class HeadlineSummaryView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    backgroundColor = .white
+    backgroundColor = .timesWhite
 
     let stackView = UIStackView(arrangedSubviews: [headlineView, summaryView, footerView])
     stackView.axis = .vertical
@@ -48,7 +48,7 @@ final class HeadlineSummaryView: UIView {
       string: headline,
       attributes: [
         .font: UIFont.boldSystemFont(ofSize: 18),
-        .foregroundColor: UIColor.black
+        .foregroundColor: UIColor.timesBlack
       ]
     )
 
@@ -56,7 +56,7 @@ final class HeadlineSummaryView: UIView {
       string: summary,
       attributes: [
         .font: UIFont.systemFont(ofSize: 14),
-        .foregroundColor: UIColor.darkGray
+        .foregroundColor: UIColor.timesGray10
       ]
     )
   }
