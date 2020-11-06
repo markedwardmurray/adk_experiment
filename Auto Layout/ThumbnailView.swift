@@ -29,7 +29,7 @@ final class ThumbnailView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    backgroundColor = .white
+    backgroundColor = .timesWhite
 
     stackView.addArrangedSubviews([textView, footerView])
     stackView.axis = .vertical
@@ -75,7 +75,7 @@ final class ThumbnailView: UIView {
       string: headline + "\n",
       attributes: [
         .font: UIFont.boldSystemFont(ofSize: 18),
-        .foregroundColor: UIColor.black
+        .foregroundColor: UIColor.timesBlack
       ]
     )
 
@@ -83,7 +83,7 @@ final class ThumbnailView: UIView {
       string: summary,
       attributes: [
         .font: UIFont.systemFont(ofSize: 14),
-        .foregroundColor: UIColor.darkGray
+        .foregroundColor: UIColor.timesGray10
       ]
     )
 

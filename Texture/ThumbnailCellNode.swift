@@ -22,7 +22,7 @@ final class ThumbnailCellNode: ASCellNode {
       string: "\(headline)\n",
       attributes: [
         .font: UIFont.boldSystemFont(ofSize: 18),
-        .foregroundColor: UIColor.black
+        .foregroundColor: UIColor.timesBlack
       ])
     let spacerAttributedString = NSAttributedString(
       string: "\n",
@@ -33,7 +33,7 @@ final class ThumbnailCellNode: ASCellNode {
       string: summary,
       attributes: [
         .font: UIFont.systemFont(ofSize: 14),
-        .foregroundColor: UIColor.darkGray
+        .foregroundColor: UIColor.timesGray10
       ])
     
     let attributedString = NSMutableAttributedString()

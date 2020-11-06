@@ -19,7 +19,7 @@ final class WebView: UIView {
       attributes: [
         .paragraphStyle: paragraphStyle,
         .font: UIFont.systemFont(ofSize: 9.0),
-        .foregroundColor: UIColor.lightGray
+        .foregroundColor: UIColor.timesGray60
       ])
   }
 

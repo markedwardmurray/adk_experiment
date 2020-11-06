@@ -13,7 +13,7 @@ final class SuperMegaiPadView: UIView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
-    backgroundColor = .white
+    backgroundColor = .timesWhite
 
     let headline = ContentGenerator.thisManyWords(2...8)
     let summary = ContentGenerator.thisManyWords(20...40)

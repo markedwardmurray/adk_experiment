@@ -75,14 +75,14 @@ final class LargeImageView: UIView {
       string: headline,
       attributes: [
         .font: UIFont.boldSystemFont(ofSize: 18),
-        .foregroundColor: UIColor.black
+        .foregroundColor: UIColor.timesBlack
       ])
 
     summaryLabel.attributedText = NSAttributedString(
       string: summary,
       attributes: [
         .font: UIFont.systemFont(ofSize: 14),
-        .foregroundColor: UIColor.darkGray
+        .foregroundColor: UIColor.timesGray10
       ])
     imageView.image = UIImage(named: crop.imageFilename)
     imageAspectConstraint.isActive = false
@@ -96,7 +96,7 @@ final class LargeImageView: UIView {
       string: credit,
       attributes: [
         .font: UIFont.systemFont(ofSize: 9),
-        .foregroundColor: UIColor.lightGray
+        .foregroundColor: UIColor.timesGray30
       ])
     creditLabel.isHidden = credit.isEmpty
 
@@ -104,7 +104,7 @@ final class LargeImageView: UIView {
       string: kicker,
       attributes: [
         .font: UIFont.systemFont(ofSize: 12),
-        .foregroundColor: UIColor.black
+        .foregroundColor: UIColor.timesBlack
       ])
     kickerLabel.isHidden = kicker.isEmpty
 

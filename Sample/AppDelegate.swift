@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       RRFPSBar.sharedInstance().isHidden = false
     }
     let window = UIWindow(frame: UIScreen.main.bounds)
-    window.backgroundColor = UIColor.white
+    window.backgroundColor = UIColor.timesWhite
     window.rootViewController = tabBarController
     window.makeKeyAndVisible()
     self.window = window
